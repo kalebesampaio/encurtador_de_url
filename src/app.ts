@@ -12,5 +12,4 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(handleErrors);
 app.use("", urlRoutes);
-
 export default app;
