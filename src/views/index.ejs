@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= title %></title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png"
+          alt="<%= title %>"
+          class="icon"
+        />
+        <h1><%= title %></h1>
+      </div>
+
+      <div class="content">
+        <form method="post" action="/url">
+          <h2>Cole a URL para ser encurtada</h2>
+          <div class="mb-3 input-group">
+            <input
+              type="text"
+              placeholder="Cole o link aqui"
+              class="form-control"
+              name="link"
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="Personalizar código"
+            class="form-control"
+            name="code"
+          />
+          <div class="div__description">
+            <span>*Quando não informado, o código é gerado aleatoriamente</span>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Encurtar URL</button>
+          <p class="description">
+            Encurtador URL é uma ferramenta para encurtar URLs e gerar links
+            curtos Com o encurtador de URL é possível criar um link encurtado
+            fácil de compartilhar
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

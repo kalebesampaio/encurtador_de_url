@@ -18,3 +18,13 @@ export const retrieveUrlController = async (req: Request, res: Response) => {
 
   return res.redirect(link);
 };
+
+export const homePageController = (req: Request, res: Response) => {
+  res.render("index", { title: "Encurtador URL" });
+};
+
+export const statusPageController = (req: Request, res: Response) => {
+  const link = req.body.link;
+  const code = req.body.code;
+  res.send("code");
+};

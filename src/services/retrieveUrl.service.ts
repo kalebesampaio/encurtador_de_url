@@ -5,7 +5,7 @@ import { AppError } from "../error";
 
 const retrieveUrlService = async (code: string) => {
   const urlRepository: Repository<Url> = AppDataSource.getRepository(Url);
-
+  console.log(code);
   const url: Url | null = await urlRepository.findOne({
     where: {
       code,
