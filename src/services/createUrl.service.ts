@@ -16,7 +16,19 @@ export const createUrlService = async (link: string, customUrl?: string) => {
   const newUrl: Url = urlRepository.create(urlObj);
   await urlRepository.save(newUrl);
 
+
   return newUrl;
+};
+
+const randomUrl = () => {
+  let random = "";
+  const possible =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (let i = 0; i < 5; i++) {
+    random += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+
+  return random;
 };
 
 const randomUrl = () => {
