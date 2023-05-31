@@ -1,5 +1,6 @@
 import { Router } from "express";
 import {
+  accessUrlController,
   createUrlController,
   homePageController,
   retrieveUrlController,
@@ -18,6 +19,7 @@ urlRoutes.post(
   createUrlController
 );
 urlRoutes.post("/new", statusPageController);
-urlRoutes.get("/:code", retrieveUrlController);
+urlRoutes.get("/:code", accessUrlController);
+urlRoutes.get("/:code/status", retrieveUrlController);
 
 export default urlRoutes;

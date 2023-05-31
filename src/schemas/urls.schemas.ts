@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const urlSchema = z.object({
   id: z.number(),
-  code: z.string(),
+  code: z.string().nullish(),
   link: z.string(),
   hits: z.number(),
   createdAt: z.string(),
@@ -14,6 +14,5 @@ const urlSchemaRequest = urlSchema.omit({
   updateAt: true,
   id: true,
   hits: true,
-  code: true,
 });
 export { urlSchema, urlSchemaRequest };
