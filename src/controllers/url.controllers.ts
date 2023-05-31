@@ -7,13 +7,20 @@ export const createUrlController = async (
   res: Response
 ): Promise<Response> => {
   const link = req.body.link;
-  const newLink = await createUrlService(link);
+  const code = req.body.code;
+
+  let newLink;
+
+  code
+    ? (newLink = await createUrlService(link, code))
+    : (newLink = await createUrlService(link));
 
   return res.status(201).json({ link: newLink });
 };
 
 export const retrieveUrlController = async (req: Request, res: Response) => {
   const code = req.params.code;
+
   const link = await retrieveUrlService(code);
 
   return res.redirect(link);
