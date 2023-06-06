@@ -7,8 +7,8 @@ yarn
 
 yarn build
 
-$ cp -R ./src/public ./dist 
+cp -R ./src/public ./dist 
 
-$ cp -R ./src/views/ ./dist
+cp -R ./src/views/ ./dist
 
 yarn typeorm migration:run -d dist/data-source
