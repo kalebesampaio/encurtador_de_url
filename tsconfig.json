@@ -13,6 +13,6 @@
     "strictPropertyInitialization": false,
     "outDir": "./dist"
   },
-  "include": ["src", "public/**/*", "views/*"],
+  "include": ["src"],
   "exclude": ["node_modules"]
 }
