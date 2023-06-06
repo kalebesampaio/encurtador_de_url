@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import express, { Application } from "express";
-import { handleErrors } from "./error";
+import { handleErrors } from "./errors";
 import urlRoutes from "./routes/url.routes";
 import path from "path";
 

@@ -24,7 +24,7 @@ class Url {
   createdAt?: string | Date;
 
   @UpdateDateColumn({ nullable: true })
-  updateAt?: string | Date | null | undefined;
+  updatedAt?: string | Date | null | undefined;
 }
 
 export { Url };

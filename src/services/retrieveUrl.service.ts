@@ -1,7 +1,7 @@
 import { Repository } from "typeorm";
 import { Url } from "../entities/url.entity";
 import { AppDataSource } from "../data-source";
-import { AppError } from "../error";
+import { AppError } from "../errors";
 
 const retrieveUrlService = async (code: string) => {
   const urlRepository: Repository<Url> = AppDataSource.getRepository(Url);

@@ -1,11 +1,20 @@
 import { Repository } from "typeorm";
 import { AppDataSource } from "../data-source";
 import { Url } from "../entities/url.entity";
+import { AppError } from "../errors";
 
 export const createUrlService = async (link: string, customUrl?: string) => {
   const urlRepository: Repository<Url> = AppDataSource.getRepository(Url);
   let code = "";
   customUrl ? (code = customUrl) : (code = randomUrl());
+  const uniqCode: Url | null = await urlRepository.findOne({
+    where: {
+      code,
+    },
+  });
+  if (uniqCode) {
+    throw new AppError("Code already exists", 409);
+  }
 
   const urlObj = {
     code: code,
